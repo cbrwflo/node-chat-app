@@ -50,7 +50,7 @@ describe('Users', () => {
     expect(users.users.length).toEqual(3);
   });
 
-  it('should find user', () => {
+  it('should find user by id', () => {
     expect(users.getUser('0')).toEqual({
       id: '0',
       name: 'Mike',
@@ -60,6 +60,19 @@ describe('Users', () => {
 
   it('should not find a user with an id that does not exist', () => {
     expect(users.getUser('doesNotExist')).toNotExist();
+  });
+
+
+  it('should find user by name', () => {
+    expect(users.getUserByName('Mike')).toEqual({
+      id: '0',
+      name: 'Mike',
+      room: 'Node Course'
+    });
+  });
+
+  it('should not find a user with a name that does not exist', () => {
+    expect(users.getUserByName('doesNotExist')).toNotExist();
   });
 
   it('should return names for node course', () => {
