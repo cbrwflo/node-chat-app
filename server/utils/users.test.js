@@ -62,7 +62,6 @@ describe('Users', () => {
     expect(users.getUser('doesNotExist')).toNotExist();
   });
 
-
   it('should find user by name', () => {
     expect(users.getUserByName('Mike')).toEqual({
       id: '0',
@@ -80,6 +79,7 @@ describe('Users', () => {
 
     expect(userList).toEqual(['Mike','Julie']);
   });
+
   it('should return names for react course', () => {
     var userList = users.getUserList('React Course');
 
